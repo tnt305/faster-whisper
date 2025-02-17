@@ -593,6 +593,7 @@ class WhisperModel:
         compute_type: str = "default",
         cpu_threads: int = 0,
         num_workers: int = 1,
+        output_dir: Optional[str] = None,
         download_root: Optional[str] = None,
         local_files_only: bool = False,
         files: dict = None,
@@ -640,6 +641,7 @@ class WhisperModel:
         else:
             model_path = download_model(
                 model_size_or_path,
+                output_dir,
                 local_files_only=local_files_only,
                 cache_dir=download_root,
             )
